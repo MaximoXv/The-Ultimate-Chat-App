@@ -1,1 +1,9 @@
+@import './styles/fonts.css';
+@import 'material-symbols/index.css';
 @import "tailwindcss";
+
+
+body {
+  font-family: 'SeuratPro', sans-serif;
+
+}
