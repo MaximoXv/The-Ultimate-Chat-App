@@ -5,5 +5,131 @@
 
 body {
   font-family: 'SeuratPro', sans-serif;
+}
 
+@layer utilities {
+  .drop-shadow-neon {
+    filter: drop-shadow(0 0 4px #f0f) drop-shadow(0 0 6px #f0f);
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out both;
+  }
+}
+
+@layer utilities {
+  .drop-shadow-neon {
+    filter: drop-shadow(0 0 4px #f0f) drop-shadow(0 0 6px #f0f);
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out both;
+  }
+}
+
+
+.chat-bubble {
+  background-color: rgba(255, 0, 255, 0.2); /* fuchsia semi-transparente */
+  border: 3px solid #e100ff; /* borde fucsia intenso */
+  clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
+  box-shadow: 0 0 10px #e100ff, 0 0 20px #e100ff;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Animación de entrada suave */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out both;
+}
+
+.chat-bubble-judgment {
+  position: relative;
+  background: rgba(255, 0, 255, 0.15); /* más claro que el borde */
+  padding: 1.25rem 1.5rem;
+  clip-path: polygon(
+    9% 1%, 91% 1%,
+    99% 11%, 99% 89%,
+    91% 99%, 9% 99%,
+    1% 89%, 1% 11%
+  );
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+/* El borde exterior brillante */
+.chat-bubble-judgment::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bubble-color, #f0f);
+  clip-path: polygon(
+    8% 0%, 92% 0%,
+    100% 10%, 100% 90%,
+    92% 100%, 8% 100%,
+    0% 90%, 0% 10%
+  );
+  z-index: -1;
+  filter: drop-shadow(0 0 4px var(--bubble-color))
+          drop-shadow(0 0 8px var(--bubble-color));
+  border-radius: 2px;
+}
+
+
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px #ff00cc) drop-shadow(0 0 8px #ff00cc);
+  }
+  50% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 1px #ff00cc) drop-shadow(0 0 2px #ff00cc);
+  }
+}
+
+.neon-line {
+  animation: neonPulse 1.2s infinite ease-in-out;
+}
+
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.draw-line path {
+  animation: drawLine 1.5s ease-out forwards;
 }

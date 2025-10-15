@@ -27,3 +27,22 @@
   src: url('../assets/fonts/SeuratProB.otf') format('opentype');
   font-weight: 700;
 }
+
+@font-face {
+  font-family: 'SeuratPro';
+  src: url('../assets/v3_nonstop/NonstopDebatecounter-Regular.ttf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SeuratPro';
+  src: url('../assets/v3_sorta/KillingHarmony-Regular.ttf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SeuratPro';
+  src: url('../assets/myriad-pro-webfont/MYRIADPRO-BOLD.woff') format('opentype');
+  font-weight: 400;
+}
+
